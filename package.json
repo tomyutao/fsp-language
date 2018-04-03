@@ -1,0 +1,42 @@
+{
+    "name": "fsp-language",
+    "displayName": "fsp",
+    "description": "Language support for LSTA tool",
+    "version": "0.1.1",
+    "publisher": "yutao",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Languages",
+        "Snippets"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "fsp",
+                "aliases": [
+                    "fsp",
+                    "fsp"
+                ],
+                "extensions": [
+                    ".lts"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "fsp",
+                "scopeName": "source.lts",
+                "path": "./syntaxes/fsp.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "fsp",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}

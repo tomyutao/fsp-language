@@ -1,0 +1,66 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "fsp",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.fsp",
+				"match": "\\b(if|then|else|when|forall|X|U|W)\\b|<>|\\[\\]"
+			},{
+				"name": "keyword.type.fsp",
+				"match":"\\b(const|set|range|fluent|progress|property|menu|animation|actions|controls|deterministic|minimal|compose|target|import|assert|exists|rigid|fluent|constraint|initially)\\b"
+			},{
+				"name":"entity.name.class.fsp",
+				"match": "\\b([A-Z][a-zA-Z0-9_]*)\\b"
+			},{
+				"name":"entity.name.function.fsp",
+				"match": "\\b([a-z_][a-zA-Z0-9_]*)\\b"
+			},{
+				"name":"constant.numeric.fsp",
+				"match": "[0-9]+"
+			},{
+				"name":"keyword.operator.new.fsp",
+			    "match":"==|=|->|<->|&&|<<|>>|!=|!|\\|\\||,|\\.|\\+|-|\\*|/|::|:|>|<|\\%|\\^"
+			},{
+				"name":"variable.name",
+				"match": "\\|"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.fsp",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.fsp",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"match": "(//).*",
+					"name": "comment.line.fsp"
+				},
+				{
+					"begin": "/\\*",
+					"end": "\\*/",
+					"name": "comment.block.fsp"
+				}
+			]
+		}
+	},
+	"scopeName": "source.lts"
+}
